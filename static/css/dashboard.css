@@ -1,0 +1,165 @@
+:root {
+    --cisco-blue: #049fd9;
+    --cisco-green: #33ab84;
+    --cisco-yellow: #ffc107;
+    --cisco-orange: #ff9800;
+    --cisco-red: #e91e63;
+    --cisco-purple: #9c27b0;
+}
+
+body { 
+    background-color: #f8f9fa; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: var(--cisco-blue);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.chart-container { 
+    background-color: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+    margin-bottom: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chart-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 4px;
+}
+
+h1, h2, h3 { 
+    color: #343a40; 
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--cisco-blue);
+}
+
+h2 {
+    color: var(--cisco-blue);
+    margin-bottom: 1.5rem;
+    padding-left: 15px;
+    border-left: 5px solid var(--cisco-green);
+}
+
+.stats-card {
+    background: linear-gradient(135deg, var(--cisco-blue), #06c);
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stats-card i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.stats-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.stats-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.table {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.table th {
+    background-color: var(--cisco-blue);
+    color: white;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+.section-header {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animated {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .chart-container {
+        padding: 15px;
+        margin-bottom: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos para imprimir el dashboard */
+@media print {
+    .navbar, .footer {
+        display: none;
+    }
+    
+    .chart-container {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+    
+    body {
+        background-color: white;
+    }
+}
